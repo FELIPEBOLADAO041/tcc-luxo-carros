@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Luxo em Veículos</title>
+<meta name="description" content="Pesquisa de TCC sobre o mercado de luxo: as nove características do luxo a partir da sua entrevista.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17171c; --text:#3a3a44; --muted:#6a6a75; --line:#e6e6ec; --soft:#f4f4f8; --bg:#fff;
+  --red:#d43c3c; --lav1:#e9e9f7;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lav1);color:var(--ink)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+h1,h2,h3{color:var(--ink);font-weight:600;letter-spacing:-.025em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+[hidden]{display:none!important}
+
+/* abertura */
+.hero{padding:72px 0 24px}
+.hero h1{font-size:clamp(40px,7.4vw,68px);line-height:1;margin-bottom:24px}
+.hero h1 span{color:var(--muted);font-weight:400}
+.hero .ola{font-size:20px;color:var(--ink);line-height:1.5}
+.dados{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-top:32px}
+.dados-full{grid-column:1/-1}
+@media(max-width:600px){.dados{grid-template-columns:1fr}}
+label.field{display:block;margin:0 0 16px}
+label.field > span,.rotulo{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-bottom:8px;padding:0}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:17px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);caret-color:var(--red)}
+input[type=text]:focus,input[type=email]:focus,textarea:focus{outline:none;border-color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+
+/* uma seção por característica */
+.carac{padding:64px 0;border-top:1px solid var(--line);scroll-margin-top:12px}
+.carac:first-of-type{margin-top:40px}
+.conta{font-size:14px;color:var(--muted);margin-bottom:10px;font-variant-numeric:tabular-nums}
+.carac h2{font-size:clamp(30px,5vw,40px);line-height:1.1;margin-bottom:18px}
+.def{font-size:20px;color:var(--ink);line-height:1.45;margin-bottom:12px}
+.def cite{font-style:normal;color:var(--muted);font-size:16px;white-space:nowrap}
+.det{font-size:16px;color:var(--muted);line-height:1.65}
+.fala{margin:32px 0 0;padding:22px 24px;background:var(--soft);border-radius:18px 18px 18px 4px;font-size:18px;color:var(--ink);line-height:1.55}
+.fala cite{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:10px}
+.peso{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin:24px 0 0;font-size:16px;color:var(--ink)}
+.peso b{font-weight:600}
+.peso i{display:flex;gap:4px}
+.peso i span{width:22px;height:8px;border-radius:4px;background:var(--line)}
+.peso i span.on{background:var(--red)}
+.peso small{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.perg{margin-top:36px;display:grid;gap:28px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.botoes{display:grid;gap:8px}
+.botoes.tres{grid-template-columns:repeat(3,1fr)}
+.botoes.cinco{grid-template-columns:repeat(5,1fr)}
+.botoes input{position:absolute;opacity:0;pointer-events:none}
+.botoes label{display:flex;align-items:center;justify-content:center;height:52px;border:1px solid var(--line);border-radius:12px;cursor:pointer;font-size:17px;font-weight:600;color:var(--ink);background:#fff;user-select:none;-webkit-tap-highlight-color:transparent;transition:background .15s,border-color .15s,color .15s,transform .15s;font-variant-numeric:tabular-nums}
+.botoes label:hover{border-color:#b9b9c4}
+.botoes label:active{transform:scale(.97)}
+.botoes input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.botoes input:focus-visible+label{outline:2px solid var(--red);outline-offset:2px}
+.escala{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:6px}
+
+/* envio */
+.envio{padding:64px 0 24px;border-top:1px solid var(--line)}
+.envio h2{font-size:clamp(28px,4.4vw,36px);margin-bottom:16px}
+button{font:inherit;font-size:17px;font-weight:600;padding:16px 28px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:background .15s,transform .15s}
+button:hover{background:#2e2e38}
+button:active{transform:scale(.97)}
+.btn-sec{background:#fff;color:var(--ink)}
+.btn-sec:hover{background:var(--soft)}
+.toast{font-size:15px;color:var(--ink);min-height:24px;margin-top:14px}
+footer{margin-top:72px;padding:28px 0 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer p{margin:0 0 6px}
+
+/* agradecimento */
+.obrigado{padding:72px 0 24px}
+.obrigado h1{font-size:clamp(40px,7vw,64px);line-height:1;margin-bottom:20px}
+.obrigado .ola{font-size:20px;color:var(--ink);line-height:1.5;max-width:620px}
+.graficos{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:48px 0 32px}
+@media(max-width:760px){.graficos{grid-template-columns:1fr}}
+.graficos figure{margin:0;text-align:center}
+.graficos figcaption{font-size:18px;font-weight:600;color:var(--ink);margin-top:8px}
+.graficos figcaption small{display:block;font-size:14px;font-weight:400;color:var(--muted)}
+.graficos svg{width:100%;height:auto;display:block;overflow:visible}
+.wide{max-width:1040px}
+</style>
+</head>
+<body>
+
+<main id="form">
+  <div class="wrap">
+    <header class="hero">
+      <h1>O que é luxo em veículos<span>, pra você?</span></h1>
+      <p class="ola">Obrigado pela conversa. Separamos o que você disse nas nove características do luxo do nosso trabalho. Em cada uma, mostramos o peso que a gente deu e queremos saber o seu.</p>
+      <div class="dados">
+        <label class="field"><span>Seu nome</span><input type="text" id="nome" autocomplete="name" value=""></label>
+        <label class="field"><span>Seu e-mail</span><input type="email" id="email" autocomplete="email" inputmode="email"></label>
+        <label class="field dados-full"><span>Função e empresa</span><input type="text" id="funcao" value=""></label>
+      </div>
+    </header>
+
+    <div id="caracs"></div>
+
+    <section class="envio">
+      <h2>Quer acrescentar algo?</h2>
+      <label class="field"><textarea id="comentario" placeholder="Opcional" aria-label="Quer acrescentar algo?"></textarea></label>
+      <button id="btnEnviar">Enviar respostas</button>
+      <div class="toast" id="toast" role="status"></div>
+    </section>
+
+    <footer>
+      <p>TCC “O que é luxo hoje não é amanhã?” · Felipe Santiago Busetti, João Guilherme Valente Belinelli e Vinícius Benevides · orientação do Prof. Juan.</p>
+      <p>As nove características vêm de Dubois, Laurent &amp; Czellar (2001) e Vigneron &amp; Johnson (2004). Os trechos da conversa foram levemente editados para leitura. As respostas são usadas só para fins acadêmicos.</p>
+    </footer>
+  </div>
+</main>
+
+<main id="fim" hidden>
+  <div class="wrap wide">
+    <header class="obrigado">
+      <h1 id="fimTitulo">Obrigado!</h1>
+      <p class="ola">Suas respostas chegaram para a gente. Se o WhatsApp abriu, é só tocar em enviar por lá também. Abaixo, o seu desenho do luxo em veículos ao lado do que a gente leu na entrevista.</p>
+    </header>
+    <div class="graficos">
+      <figure><svg id="gVoce" viewBox="-250 -215 500 440" role="img" aria-label="Gráfico com as suas notas"></svg><figcaption>Seu gráfico<small>as notas que você deu</small></figcaption></figure>
+      <figure><svg id="gNos" viewBox="-250 -215 500 440" role="img" aria-label="Gráfico com os pesos que a gente deu"></svg><figcaption>Nossa leitura<small>os pesos que a gente deu a partir da entrevista</small></figcaption></figure>
+    </div>
+    <button class="btn-sec" id="btnVoltar">Voltar às respostas</button>
+    <footer>
+      <p>TCC “O que é luxo hoje não é amanhã?” · Felipe Santiago Busetti, João Guilherme Valente Belinelli e Vinícius Benevides · orientação do Prof. Juan.</p>
+    </footer>
+  </div>
+</main>
+
+<script>
+const SETOR = "veículos";
+const ITENS = [{"nome": "Qualidade superior", "curta": "Qualidade", "def": "Feito melhor que o comum: materiais, acabamento e durabilidade.", "autor": "Dubois, Laurent & Czellar, 2001", "det": "Para Dubois, Laurent & Czellar, é uma execução tecnicamente superior, que dá para verificar e defender. Para Vigneron & Johnson, é o que o cliente percebe como superior, mesmo que não dê para medir. Desde a produção em série do século XIX, o feito à mão virou sinal de status.", "fala": ["06:40", "Não tem o sistema de som assinado, não tem a qualidade do couro, não tem a dirigibilidade, as propriedades de freio e do motor."], "peso": 3}, {"nome": "Escassez / raridade", "curta": "Escassez", "def": "Pouca oferta de propósito, mesmo quando daria para fazer mais.", "autor": "Dubois et al., 2001", "det": "A produção é limitada de propósito, mesmo quando haveria demanda para fazer mais. Vigneron & Johnson chamam de singularidade. Quando a oferta não acompanha a procura, o desejo cresce e o preço sobe junto.", "fala": ["16:45", "A Porsche tem que liberar pra você. Não é qualquer um. Tem que ter a cota do carro para poder vir."], "peso": 5}, {"nome": "Sinalização de status", "curta": "Status", "def": "Ser visto consumindo: o produto mostra a posição de quem tem.", "autor": "Veblen, 1899; Vigneron & Johnson, 2004", "det": "É o quanto o consumo fica visível para os outros. Vem do consumo conspícuo de Veblen (1899): comprar também para ser visto. Vigneron & Johnson chamam essa dimensão de conspicuidade.", "fala": ["25:03", "É chamar atenção, é poder pertencer a uma nova classe."], "peso": 5}, {"nome": "Preço elevado como barreira", "curta": "Preço", "def": "O preço alto como barreira de entrada, não só como custo.", "autor": "Dubois et al., 2001", "det": "O preço alto não é só consequência do custo de produção: ele funciona como uma barreira de entrada deliberada. Às vezes, em vez de afastar compradores, o preço alto atrai mais gente.", "fala": ["08:23", "O luxo muitas vezes não está necessariamente atrelado ao valor."], "peso": 3}, {"nome": "Tradição e história", "curta": "Tradição", "def": "Quanto mais longa a história da marca, mais valor ela carrega.", "autor": "Dubois et al., 2001", "det": "A ligação com uma história longa e contínua acumula valor simbólico: quanto mais antiga a marca, mais peso ela carrega. Para Kapferer & Bastien (2012), a tradição é algo que uma marca de luxo não negocia.", "fala": ["06:22", "Ele tem que ter a sua história. O famoso, aspas, pedigree."], "peso": 1}, {"nome": "Apelo estético / sensorial", "curta": "Estética", "def": "Agradar a vários sentidos ao mesmo tempo: olhar, toque, som.", "autor": "Dubois et al., 2001", "det": "O produto precisa agradar vários sentidos ao mesmo tempo: a visão, o tato, o olfato, o som. A própria palavra vem do latim lux, que já carrega a ideia de brilho e esplendor.", "fala": ["12:39", "Eu escolho tudo: a cor externa, a cor interna, a cor da roda, o desenho da roda, a cor da costura do banco."], "peso": 3}, {"nome": "Hedonismo", "curta": "Hedonismo", "def": "A satisfação de usar, mesmo sem ninguém olhando.", "autor": "Vigneron & Johnson, 2004", "det": "É o prazer emocional e sensorial que vem do próprio uso, independentemente de quem está vendo. Lipovetsky (2004) descreve essa virada no luxo: da ostentação para a experiência.", "fala": ["10:50", "No meu perfil hoje, a grande maioria é a satisfação pessoal, o cara que gosta de dirigir um carro veloz."], "peso": 5}, {"nome": "Extensão do self", "curta": "Self", "def": "O produto vira parte da identidade: não é só ter, é ser.", "autor": "Vigneron & Johnson, 2004", "det": "O produto passa a fazer parte da identidade de quem tem: é ser o tipo de pessoa que tem aquilo. Exige também conhecimento para apreciar, o que Bourdieu (1979) chama de capital cultural.", "fala": ["21:10", "Não era nem ele que queria aparecer, mas ele queria um carro que aparecesse."], "peso": 5}, {"nome": "Caráter supérfluo", "curta": "Supérfluo", "def": "O significado vale mais do que a função.", "autor": "Dubois et al., 2001", "det": "O valor simbólico supera o valor funcional: o produto vai além do que seria preciso. É a característica mais polêmica do grupo, apontada pelos próprios autores como a menos aceita pelos consumidores.", "fala": ["33:36", "Ele tem um Porsche, uma Ferrari na garagem para sair no final de semana. No jantar do clube, ele não vai com o carro chinês."], "peso": 1}];
+const ROT = { 1: "nada importante", 5: "muito importante" };
+const CONC = ["Sim", "Em parte", "Não"];
+
+const N = ITENS.length, R = 150, NIVEIS = 5;
+const notas = Array(N).fill(0);
+const conc = Array(N).fill("");
+const svgNS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+let insistiu = false;
+function aviso(msg) { $("toast").textContent = msg; }
+
+ITENS.forEach((it, i) => {
+  const barras = [1, 2, 3, 4, 5].map(v => `<span class="${v <= it.peso ? "on" : ""}"></span>`).join("");
+  const seg = CONC.map((c, k) => `<input type="radio" name="c${i}" id="c${i}k${k}" value="${c}"><label for="c${i}k${k}">${c}</label>`).join("");
+  const nota = [1, 2, 3, 4, 5].map(v => `<input type="radio" name="q${i}" id="q${i}v${v}" value="${v}"><label for="q${i}v${v}">${v}</label>`).join("");
+  $("caracs").insertAdjacentHTML("beforeend", `
+  <section class="carac" id="c-${i}">
+    <p class="conta">${i + 1} de ${N}</p>
+    <h2>${it.nome}</h2>
+    <p class="def">${it.def} <cite>(${it.autor})</cite></p>
+    <p class="det">${it.det}</p>
+    <blockquote class="fala">“${esc(it.fala[1])}”<cite>Você, aos ${it.fala[0]} da conversa</cite></blockquote>
+    <p class="peso"><b>Peso que a gente deu</b><i aria-hidden="true">${barras}</i><small>${it.peso} de 5</small></p>
+    <div class="perg">
+      <fieldset><legend class="rotulo">Você concorda?</legend><div class="botoes tres">${seg}</div></fieldset>
+      <fieldset><legend class="rotulo">Que peso você daria?</legend><div class="botoes cinco">${nota}</div><div class="escala" aria-hidden="true"><span>${ROT[1]}</span><span>${ROT[5]}</span></div></fieldset>
+      <label class="field" style="margin:0"><span>Gostaria de justificar?</span><textarea id="j${i}" placeholder="Opcional"></textarea></label>
+    </div>
+  </section>`);
+});
+document.querySelectorAll(".botoes input").forEach(inp => inp.addEventListener("change", e => {
+  const i = +e.target.name.slice(1);
+  if (e.target.name[0] === "q") notas[i] = +e.target.value; else conc[i] = e.target.value;
+  insistiu = false; aviso("");
+}));
+
+// gráfico (só aparece no agradecimento)
+const ang = i => -Math.PI / 2 + i * 2 * Math.PI / N;
+const pt = (i, r) => [r * Math.cos(ang(i)), r * Math.sin(ang(i))];
+const poly = r => ITENS.map((_, i) => pt(i, r).map(n => n.toFixed(2)).join(",")).join(" ");
+const polyVals = vals => vals.map((v, i) => pt(i, R * v / NIVEIS).map(n => n.toFixed(2)).join(",")).join(" ");
+const el = (tag, attrs) => { const e = document.createElementNS(svgNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+function radar(svg, vals, cor, preenche) {
+  svg.textContent = "";
+  const ringFill = ["#e9e9f7", "#d6d6f1", "#c1c1ea", "#a9a9e1", "#8f8fd6"];
+  for (let k = NIVEIS; k >= 1; k--) svg.appendChild(el("polygon", { points: poly(R * k / NIVEIS), fill: ringFill[NIVEIS - k], stroke: "#17171c", "stroke-width": k === NIVEIS ? 2.2 : 1.3 }));
+  svg.appendChild(el("polygon", { points: poly(9), fill: "#17171c" }));
+  ITENS.forEach((_, i) => { const [x, y] = pt(i, R); svg.appendChild(el("line", { x1: 0, y1: 0, x2: x, y2: y, stroke: "#17171c", "stroke-opacity": .22, "stroke-width": 1 })); });
+  svg.appendChild(el("polygon", { points: polyVals(vals), fill: preenche, stroke: cor, "stroke-width": 2.5, "stroke-linejoin": "round" }));
+  vals.forEach((v, i) => { if (!v) return; const [x, y] = pt(i, R * v / NIVEIS); svg.appendChild(el("circle", { cx: x, cy: y, r: 4, fill: cor })); });
+  ITENS.forEach((it, i) => {
+    const [x, y] = pt(i, R + 24);
+    const t = el("text", { x, y: y + 5, "text-anchor": Math.abs(x) < 8 ? "middle" : x > 0 ? "start" : "end", "font-size": 15, "font-weight": 600, "font-family": "Hanken Grotesk, system-ui, sans-serif", fill: "#17171c" });
+    t.textContent = it.curta; svg.appendChild(t);
+  });
+}
+
+// envio: um toque manda o .md por e-mail (FormSubmit) e abre o WhatsApp com as respostas
+const EMAIL = "ifprsantiago@gmail.com";
+const WHATS = "5541984688882";
+const val = id => $(id).value.trim();
+const slug = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^\w]+/g, "-").replace(/^-|-$/g, "").toLowerCase();
+
+function markdown() {
+  const l = [`# O luxo em ${SETOR}: respostas`, ""];
+  l.push(`- **Nome:** ${val("nome") || "-"}`, `- **E-mail:** ${val("email") || "-"}`, `- **Função e empresa:** ${val("funcao") || "-"}`, `- **Enviado em:** ${new Date().toLocaleString("pt-BR")}`, "");
+  l.push("| Característica | Nosso peso | Peso do entrevistado | Concorda | Justificativa |", "|---|---|---|---|---|");
+  ITENS.forEach((it, i) => l.push(`| ${it.nome} | ${it.peso} | ${notas[i] || "-"} | ${conc[i] || "-"} | ${val("j" + i).replace(/\s*\n\s*/g, " ").replace(/\|/g, "/") || "-"} |`));
+  l.push("", "## Quer acrescentar algo?", "", val("comentario") || "-", "");
+  return l.join("\n");
+}
+function whats() {
+  const l = [`*O luxo em ${SETOR}: respostas*`, `Nome: ${val("nome") || "-"}`, `E-mail: ${val("email") || "-"}`];
+  if (val("funcao")) l.push(`Função: ${val("funcao")}`);
+  ITENS.forEach((it, i) => {
+    const j = val("j" + i);
+    l.push("", `*${it.nome}*`, `Nosso peso: ${it.peso} · Meu peso: ${notas[i] || "-"} · Concordo: ${conc[i] || "-"}`);
+    if (j) l.push(`Justificativa: ${j}`);
+  });
+  if (val("comentario")) l.push("", `Acrescento: ${val("comentario")}`);
+  return l.join("\n");
+}
+
+$("btnEnviar").onclick = () => {
+  const f = notas.filter(n => !n).length + conc.filter(c => !c).length;
+  if (f && !insistiu) {
+    insistiu = true;
+    const primeira = ITENS.findIndex((_, i) => !notas[i] || !conc[i]);
+    aviso(`Falta${f > 1 ? "m" : ""} ${f} resposta${f > 1 ? "s" : ""}, a primeira em “${ITENS[primeira].nome}”. Se quiser enviar assim mesmo, toque de novo.`);
+    return;
+  }
+  // o WhatsApp abre antes de qualquer espera; depois disso o navegador bloquearia a janela
+  const wa = "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(whats());
+  const janela = window.open(wa, "_blank");
+
+  const md = markdown();
+  const dados = new FormData();
+  dados.append("_subject", `Respostas TCC luxo · ${SETOR} · ${val("nome") || "sem nome"}`);
+  dados.append("_template", "box");
+  dados.append("_captcha", "false");
+  dados.append("nome", val("nome") || "-");
+  if (val("email")) dados.append("email", val("email"));
+  dados.append("respostas", md);
+  dados.append("attachment", new File([md], `luxo-${slug(SETOR)}-${slug(val("nome") || "resposta")}.md`, { type: "text/markdown" }));
+  fetch("https://formsubmit.co/ajax/" + EMAIL, { method: "POST", body: dados, headers: { Accept: "application/json" }, keepalive: true }).catch(() => {});
+
+  // agradecimento com os dois gráficos lado a lado
+  const nome = val("nome").split(" ")[0];
+  $("fimTitulo").textContent = nome ? `Obrigado, ${nome}!` : "Obrigado!";
+  radar($("gVoce"), notas, "#d43c3c", "rgba(212,60,60,.55)");
+  radar($("gNos"), ITENS.map(it => it.peso), "#17171c", "rgba(23,23,28,.45)");
+  $("form").hidden = true; $("fim").hidden = false; scrollTo(0, 0);
+  if (!janela) location.href = wa;
+};
+$("btnVoltar").onclick = () => { $("fim").hidden = true; $("form").hidden = false; };
+</script>
+</body>
+</html>
